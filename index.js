@@ -140,7 +140,7 @@ let prefix = prefixes[message.guild.id].prefixes;
   if(cmd === `${prefix}commands`){
 
     let commander = new Discord.RichEmbed()
-    .setDescription("All Commands That I Have | My Global Prefix Is: "*".")
+    .setDescription("All Commands That I Have | My Global Prefix Is: * ")
     .setColor("#00ffe9")
     .addField("Help Command", " ============================== ")
     .addField("{prefix}commands", "Check All The Commands!")
