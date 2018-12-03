@@ -2,6 +2,8 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone:  true});
+const args = message.content.slice(prefix.lenght).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
 bot.commands = new Discord.Collection();
 
 bot.on("ready", async () => {
@@ -41,7 +43,18 @@ bot.on("message", async message => {
 
     return;
   }
-
+  
+  client.on(`message`, (message) => {
+  
+    if(message.author.bot) return;
+    if(!message.content.starsWith(prefix)) return;
+    
+    if(command === "ping") {
+      message.channel.send(`Pong! ` + Math.round(client.ping) + ` ms!`)
+      
+    }
+       
+  
 if(cmd === `${prefix}kick`){
 
   let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
