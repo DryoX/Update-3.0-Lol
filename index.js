@@ -76,7 +76,7 @@ if(cmd === `${prefix}ban`){
   if(!bUser) return message.channel.send("Can't find user!");
   let bReason = args.join(" ").slice(22);
   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Nope, Permission Require");
-  if(bUser.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Too OP To Get Ban");
+  if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Too OP To Get Ban");
 
   let banEmbed = new Discord.RichEmbed()
   .setDescription("This Player Banned Because Of This Report And Reason!")
